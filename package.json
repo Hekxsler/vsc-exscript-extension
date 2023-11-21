@@ -1,0 +1,26 @@
+{
+  "name": "exscript",
+  "displayName": "Exscript",
+  "description": "Syntax highlighting for exscript",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "exscript",
+      "aliases": ["Exscript", "exscript"],
+      "extensions": [".ex",".exscript"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "exscript",
+      "scopeName": "source.exscript",
+      "path": "./syntaxes/exscript.tmLanguage.json"
+    }]
+  },
+  "repository": {}
+}
