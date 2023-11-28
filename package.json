@@ -2,7 +2,7 @@
   "name": "exscript",
   "displayName": "Exscript",
   "description": "Syntax highlighting for exscript",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.75.0"
   },
@@ -20,7 +20,15 @@
       "language": "exscript",
       "scopeName": "source.exscript",
       "path": "./syntaxes/exscript.tmLanguage.json"
-    }]
+    }],
+    "semanticTokenScopes": [
+      {
+        "language": "python",
+        "scopes": {
+          "keyword.operator": ["keyword.operator.logical.python"]
+        }
+      }
+    ]
   },
   "repository": {}
 }

@@ -6,7 +6,8 @@
 			"include": "#codeblock"
 		},
 		{
-			"include": "#variables"
+			"name": "variable.other",
+			"match": "\\$\\w+"
 		}
 	],
 	"repository": {
@@ -14,7 +15,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control",
-					"match": "\\b(try|if|else|loop|extract|append|end|fail)\\b"
+					"match": "\\b(append|as|else|end|extract|fail|if|into|loop|to|try)\\b"
 				}
 			]
 		},
@@ -37,8 +38,12 @@
 		"functions": {
 			"patterns": [
 				{
-					"name": "entity.name.function",
+					"name": "support.class",
 					"match": "\\b(connection|sys|crypt|file|ipv4|list|mysys|string|util)\\b"
+				},
+				{
+					"name": "support.function",
+					"match": "(?<=\\.)\\w+(?=\\()"
 				}
 			]
 		},
@@ -53,8 +58,8 @@
 		"operators": {
 			"patterns": [
 				{
-					"name": "keyword.operator",
-					"match": "\\b(not|and|or)\\b"
+					"name": "constant.language",
+					"match": "\\b(in|is|not|and|or|is not|lt|lte|gt|gte)\\b"
 				}
 			]
 		},
@@ -62,7 +67,67 @@
 			"patterns": [
 				{
 					"name": "variable.parameter",
-					"match": "\\b\\\\$\\w+\\b"
+					"match": "\\b\\w+(?= =)\\b"
+				},
+				{
+					"name": "variable.parameter",
+					"match": "\\b(?<=if )\\w+\\b"
+				},
+				{
+					"name": "variable.parameter",
+					"match": "\\b(?<=loop )\\w+\\b"
+				},
+				{
+					"name": "variable.parameter",
+					"match": "\\b(?<=append )\\w+\\b"
+				},
+				{
+					"name": "variable.parameter",
+					"match": "\\b(?<=to )\\w+\\b"
+				},
+				{
+					"name": "variable.parameter",
+					"match": "\\b(?<=lt )\\w+\\b"
+				},
+				{
+					"name": "variable.parameter",
+					"match": "\\b(?<=lte )\\w+\\b"
+				},
+				{
+					"name": "variable.parameter",
+					"match": "\\b(?<=gt )\\w+\\b"
+				},
+				{
+					"name": "variable.parameter",
+					"match": "\\b(?<=gte )\\w+\\b"
+				},
+				{
+					"name": "variable.parameter",
+					"match": "\\b\\w+(?= lt)\\b"
+				},
+				{
+					"name": "variable.parameter",
+					"match": "\\b\\w+(?= lte)\\b"
+				},
+				{
+					"name": "variable.parameter",
+					"match": "\\b\\w+(?= gt)\\b"
+				},
+				{
+					"name": "variable.parameter",
+					"match": "\\b\\w+(?= gte)\\b"
+				},
+				{
+					"name": "variable.parameter",
+					"match": "\\b(?<=as )\\w+\\b"
+				},
+				{
+					"name": "variable.parameter",
+					"match": "\\b(?<=into )\\w+\\b"
+				},
+				{
+					"name": "variable.parameter",
+					"match": "\\b((?<=, )\\w+)+\\b"
 				}
 			]
 		},
@@ -72,7 +137,8 @@
 			"end": "\"",
 			"patterns": [
 				{
-					"include": "#variables"
+					"name": "variable.other",
+					"match": "\\$\\w+"
 				}
 			]
 		},
@@ -101,7 +167,16 @@
 			"end": "\\}",
 			"patterns": [
 				{
+					"include": "#constants"
+				},
+				{
 					"include": "#keywords"
+				},
+				{
+					"include": "#operators"
+				},
+				{
+					"include": "#variables"
 				},
 				{
 					"include": "#functions"
@@ -117,9 +192,6 @@
 				},
 				{
 					"include": "#regex"
-				},
-				{
-					"include": "#operators"
 				}
 			]
 		}
