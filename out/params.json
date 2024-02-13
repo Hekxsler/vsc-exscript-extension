@@ -1,0 +1,145 @@
+{
+    "connection": {
+        "authenticate_user": {
+            "user?: string": "A username.",
+            "password?: string": "A password."
+        },
+        "authorize": {
+            "password?: string": "A password."
+        },
+        "auto_authorize": {
+            "password?: string": "A password."
+        },
+        "exec_": {
+            "data: string": "The data that is sent."
+        },
+        "execline": {
+            "data: string": "The data that is sent."
+        },
+        "send": {
+            "data: string": "The data that is sent."
+        },
+        "sendline": {
+            "data: string": "The data that is sent."
+        },
+        "wait_for": {
+            "prompt: regexp": "The prompt pattern."
+        },
+        "set_prompt": {
+            "prompt?: regexp": "The prompt pattern."
+        },
+        "set_error": {
+            "error_re?: regexp": "The error pattern."
+        },
+        "set_timeout": {
+            "timeout: int": "The timeout in seconds."
+        }
+    },
+    "crypt": {
+        "otp": {
+            "password: string": "A password.",
+            "seed: string": "A seed.",
+            "seqs: int": "A sequence number, or a list of sequence numbers."
+        }
+    },
+    "file": {
+        "chmod": {
+            "filename: string": "A filename.",
+            "mode: int": "The access permissions."
+        },
+        "clear": {
+            "filename: string": "A filename."
+        },
+        "exists": {
+            "filename: string": "A filename."
+        },
+        "mkdir": {
+            "dirname: string": "A filename, or a list of dirnames.",
+            "mode?: int": "The access permissions."
+        },
+        "read": {
+            "filename: string": "A filename."
+        },
+        "rm": {
+            "filename: string": "A filename."
+        },
+        "write": {
+            "filename: string": "A filename.",
+            "lines: string": "The data that is written to the file.",
+            "mode?: int": "Writing mode. Defaults to 'a'"
+        }
+    },
+    "ipv4": {
+        "in_network": {
+            "prefixes: string": "A prefix, or a list of IP prefixes.",
+            "destination: string": "An IP address.",
+            "default_pfxlen?: int": "The default prefix length. Defaults to 24"
+        },
+        "mask": {
+            "ips: string": "A prefix, or a list of IP prefixes.",
+            "mask: string": "An IP mask."
+        },
+        "mask2pfxlen": {
+            "masks: string": "An IP mask, or a list of masks."
+        },
+        "pfxlen2mask": {
+            "pfxlen: int": "An IP prefix length."
+        },
+        "network": {
+            "prefixes: string": "An IP prefix."
+        },
+        "broadcast": {
+            "prefixes: string": "An IP prefix."
+        },
+        "pfxmask": {
+            "ips: string": "An IP address, or a list of IP addresses.",
+            "pfxlen: int": "An IP prefix length."
+        },
+        "remote_ip": {
+            "local_ips: string": "An IP address, or a list of IP addresses."
+        }
+    },
+    "list": {
+        "length": {
+            "mylist: list": "A list."
+        },
+        "get": {
+            "source: string": "A list of strings.",
+            "index: string": "A list of strings."
+        },
+        "unique": {
+            "source: string": "A list of strings."
+        }
+    },
+    "sys": {
+        "env": {
+            "varname: string": "A variable name."
+        },
+        "execute": {
+            "command: string": "A shell command."
+        },
+        "message": {
+            "message: string": "A string, or a list of strings."
+        },
+        "wait": {
+            "seconds: int": "The wait time in seconds."
+        }
+    },
+    "string": {
+        "replace": {
+            "strings: string": "A string or, a list of strings.",
+            "source: string": "What to replace.",
+            "dest: string": "What to replace it with."
+        },
+        "split": {
+            "strings: string": "A string or, a list of strings.",
+            "separator: string": "The character where the string will be split."
+        },
+        "tolower": {
+            "strings: string": "A string or, a list of strings."
+        },
+        "toupper": {
+            "strings: string": "A string or, a list of strings."
+        }
+    }
+}

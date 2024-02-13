@@ -1,0 +1,59 @@
+{
+    "connection": {
+        "authenticate": "Looks for any username/password prompts on the current connection and logs in using the login information that was passed to Exscript.",
+        "authenticate_user": "Like authenticate(), but logs in using the given user and password.\n\n\nIf a user and password are not given, the function uses the same user and password that were used at the last login attempt; it is an error if no such attempt was made before.",
+        "authorize": "Looks for a password prompt on the current connection and enters the given password.\n\n\nIf a password is not given, the function uses the same password that was used at the last login attempt; it is an error if no such attempt was made before.",
+        "auto_authorize": "Executes a command on the remote host that causes an authorization procedure to be started, then authorizes using the given password in the same way in which authorize() works.\n\n\nDepending on the detected operating system of the remote host the following commands are started:\n\n\n\n\n\n- on IOS, the \"enable\" command is executed.\n\n\n- nothing on other operating systems yet.",
+        "autoinit": "Make the remote host more script-friendly by automatically executing one or more commands on it.\n\n\nThe commands executed depend on the currently used driver.\n\n\nFor example, the driver for Cisco IOS would execute the following commands:\n\n\nterm len 0\n\n\nterm width 0",
+        "close": "Closes the existing connection with the remote host. This function is rarely used, as normally Exscript closes the connection automatically when the script has completed.",
+        "exec_": "Sends the given data to the remote host and waits until the host has responded with a prompt.\n\n\nIf the given data is a list of strings, each item is sent, and after each item a prompt is expected.\n\n\nThis function also causes the response of the command to be stored in the built-in __response__ variable.",
+        "execline": "Like exec(), but appends a newline to the command in data before sending it.",
+        "guess_os": "Guesses the operating system of the connected host.\n\n\nThe recognition is based on the past conversation that has happened on the host; Exscript looks for known patterns and maps them to specific operating systems.",
+        "send": "Like exec(), but does not wait for a response of the remote host after sending the command.",
+        "sendline": "Like execline(), but does not wait for a response of the remote host after sending the command.",
+        "wait_for": "Waits until the response of the remote host contains the given pattern.",
+        "set_prompt": "Defines the pattern that is recognized at any future time when Exscript needs to wait for a prompt.\n\n\nIn other words, whenever Exscript waits for a prompt, it searches the response of the host for the given pattern and continues as soon as the pattern is found.\n\n\nExscript waits for a prompt whenever it sends a command (unless the send() method was used). set_prompt() redefines as to what is recognized as a prompt.",
+        "set_error": "Defines a pattern that, whenever detected in the response of the remote host, causes an error to be raised.\n\n\nIn other words, whenever Exscript waits for a prompt, it searches the response of the host for the given pattern and raises an error if the pattern is found.",
+        "set_timeout": "Defines the time after which Exscript fails if it does not receive a prompt from the remote host."
+    },
+    "crypt": {
+        "otp": "Calculates a one-time password hash using the given password, seed and sequence number and returns it. Uses the md4/sixword algorithm as supported by TACACS+ servers."
+    },
+    "file": {
+        "chmod": "Changes the permissions of the given file (or list of files) to the given mode. You probably want to use an octal representation for the integer, e.g. \"chmod(myfile, 0644)\".",
+        "clear": "Clear the contents of the given file. The file is created if it does not exist.",
+        "exists": "If a list of files is given, the function returns True only if ALL of the files exist.",
+        "mkdir": "Creates the given directory (or directories). The optional access permissions are set to the given mode, and default to whatever is the umask on your system defined.",
+        "read": "Reads the given file and returns the result. The result is also stored in the built-in __response__ variable.",
+        "rm": "Deletes the given file (or files) from the file system.",
+        "write": "Writes the given string into the given file.\n\n\nThe following modes are supported:\n\n\n- 'a': Append to the file if it already exists.\n\n\n- 'w': Replace the file if it already exists."
+    },
+    "ipv4": {
+        "in_network": "Returns True if the given destination is in the network range that is defined by the given prefix (e.g. 10.0.0.1/22). If the given prefix does not have a prefix length specified, the given default prefix length is applied. If no such prefix length is given, the default length is /24.\n\n\nIf a list of prefixes is passed, this function returns True only if the given destination is in ANY of the given prefixes.",
+        "mask": "Applies the given IP mask (e.g. 255.255.255.0) to the given IP address (or list of IP addresses) and returns it.",
+        "mask2pfxlen": "Converts the given IP mask(s) (e.g. 255.255.255.0) to prefix length(s).",
+        "pfxlen2mask": "Converts the given prefix length(s) (e.g. 30) to IP mask(s).",
+        "network": "Given a prefix, this function returns the corresponding network address.",
+        "broadcast": "Given a prefix, this function returns the corresponding broadcast address.",
+        "pfxmask": "Applies the given prefix length to the given ips, resulting in a (list of) IP network addresses.",
+        "remote_ip": "Given an IP address, this function calculates the remaining available IP address under the assumption that it is a /30 network.\n\n\nIn other words, given one link net address, this function returns the other link net address."
+    },
+    "list": {
+        "new": "Returns a new, empty list.",
+        "length": "Returns the number of items in the list.",
+        "get": "Returns a copy of the list item with the given index. It is an error if an item with teh given index does not exist.",
+        "unique": "Returns a copy of the given list in which all duplicates are removed such that one of each item remains in the list."
+    },
+    "sys": {
+        "env": "Returns the value of the environment variable with the given name.",
+        "execute": "Executes the given command locally.",
+        "message": "Writes the given string to stdout.",
+        "wait": "Waits for the given number of seconds."
+    },
+    "string": {
+        "replace": "Returns a copy of the given string (or list of strings) in which all occurrences of the given source are replaced by the given dest.",
+        "split": "Returns a list with the split values of the given string (or list of strings). The values are split at the seperator",
+        "tolower": "Returns the given string in lower case.",
+        "toupper": "Returns the given string in upper case."
+    }
+}
