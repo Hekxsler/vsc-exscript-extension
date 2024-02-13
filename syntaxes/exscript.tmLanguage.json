@@ -8,6 +8,10 @@
 		{
 			"name": "variable.other",
 			"match": "\\$\\w+"
+		},
+		{
+			"name": "comment.line.number-sign",
+			"match": "^[\\t\\s]*#[^\\r\\n]+[\\r\\n]"
 		}
 	],
 	"repository": {
@@ -15,7 +19,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control",
-					"match": "\\b(append|as|else|end|extract|fail|if|into|loop|to|try)\\b"
+					"match": "\\b(append|as|else|end|extract|fail|if|into|loop|to|try|from)\\b"
 				}
 			]
 		},
@@ -59,7 +63,7 @@
 			"patterns": [
 				{
 					"name": "constant.language",
-					"match": "\\b(in|is|not|and|or|is not|lt|lte|gt|gte)\\b"
+					"match": "\\b(in|is|not|and|or|is not|lt|lte|gt|gte|matches)\\b"
 				}
 			]
 		},
@@ -124,6 +128,10 @@
 				{
 					"name": "variable.parameter",
 					"match": "\\b(?<=into )\\w+\\b"
+				},
+				{
+					"name": "variable.parameter",
+					"match": "\\b(?<=from )\\w+\\b"
 				},
 				{
 					"name": "variable.parameter",
